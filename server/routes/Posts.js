@@ -4,7 +4,13 @@ const { Posts } = require("../models");
 
 router.get("/", async (req, res) => {
     const postsList = await Posts.findAll();
-    res.json(postsList);
+    const response = [];
+    for (const post of postsList){
+        const username = "John";
+        response.push({id: post.id, title: post.title, content: post.content, username: username})
+    }
+    
+    res.json(response);
 });
 
 router.post("/", async (req, res) => {
