@@ -20,7 +20,7 @@ function Home() {
         <NavBar active="Home"/>
         <div className='posts'>
           {listOfPosts.map((post) => {
-            return(<Post key={"post:" + post.id} {...{id:post.id, title: post.title, content: post.content, username: post.username}}/>)
+            return(<Post key={"post:" + post.id} {...{id:post.id, title: post.title, content: post.content, username: post.Account.username}}/>)
           })}
         </div>
       </div>

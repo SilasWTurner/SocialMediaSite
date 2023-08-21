@@ -19,12 +19,12 @@ const MyTextArea = ({ ...props}) => {
 
 function CreatePost() {
 
-    const username = "Jeremy";
+    const AccountId = 1;
 
     const initialValues = {
         title: "",
         content: "",
-        username: username
+        AccountId: AccountId
     };
 
     let nav = useNavigate();
@@ -56,7 +56,7 @@ function CreatePost() {
                             rows="6"
                             placeholder="(Ex. Hello world...)"
                         />
-                        <Field hidden name="username" />
+                        <Field hidden name="AccountId" />
                         <button type="submit">Create Post</button>
                     </Form>
                 </Formik>

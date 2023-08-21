@@ -6,11 +6,11 @@ import "./Post.css";
 
 function Post() {
     let {id} = useParams();
-    const [postObject, setPostObject] = useState({});
+    const [postObject, setPostObject] = useState({title: "", content: "", Account:{username:""}});
 
     useEffect(() => {
         axios.get(`http://localhost:5001/posts/fromID/${id}`).then((res) => {
-            setPostObject(res.data);
+            setPostObject(res.data[0]);
         });
     }, []);
 
@@ -22,7 +22,7 @@ function Post() {
                 <div className="left">
                     <div className="title">{postObject.title}</div>
                     <div className="content">{postObject.content}</div>
-                    <div className="footer">{postObject.username}</div>
+                    <div className="footer">{postObject.Account.username}</div>
                 </div>
                 <div className="right">
 

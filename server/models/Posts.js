@@ -7,11 +7,14 @@ module.exports = (sequelize, DataTypes) => {
         content: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        userid: {
-            type: DataTypes.INTEGER,
-            allowNull: false
         }
     });
+
+    Posts.associate = (models) => {
+        Posts.hasMany(models.Comments, {
+            onDelete: "cascade"
+        });
+        Posts.belongsTo(models.Accounts)
+    }
     return Posts;
 };
