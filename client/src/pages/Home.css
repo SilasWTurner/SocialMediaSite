@@ -1,0 +1,4 @@
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 580px 1fr;
+}
